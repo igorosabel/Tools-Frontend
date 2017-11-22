@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Tools</span>
+</mat-toolbar>
+
+<mat-card class="card-66">
+  <mat-nav-list>
+    <mat-list-item *ngFor="let tool of toolList">
+      <a (click)="goToTool(tool)">{{ tool.name }}</a>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>
