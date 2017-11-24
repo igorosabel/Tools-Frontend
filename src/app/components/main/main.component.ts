@@ -21,8 +21,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {}
 
   goToTool(tool){
-    console.log(tool);
-    //this.router.navigate([tool.url]);
+    this.router.navigate([tool.url]);
   }
 
 }

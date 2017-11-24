@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { routing, appRoutingProviders } from './app.routes';
 import {
 	MatToolbarModule,
@@ -19,17 +20,20 @@ import {
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { Sha1Component } from './components/sha1/sha1.component';
+import { Sha1Pipe } from './pipes/sha1.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    Sha1Component
+    Sha1Component,
+    Sha1Pipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    FormsModule,
     routing,
     MatToolbarModule,
     MatButtonModule,
