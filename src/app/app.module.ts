@@ -20,6 +20,10 @@ import {
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { Sha1Component } from './components/sha1/sha1.component';
+import { CryptComponent } from './components/crypt/crypt.component';
+import { UrlencodeComponent } from './components/urlencode/urlencode.component';
+import { WindowSizeComponent } from './components/window-size/window-size.component';
+import { UserAgentComponent } from './components/user-agent/user-agent.component';
 import { Sha1Pipe } from './pipes/sha1.pipe';
 
 @NgModule({
@@ -27,7 +31,11 @@ import { Sha1Pipe } from './pipes/sha1.pipe';
     AppComponent,
     MainComponent,
     Sha1Component,
-    Sha1Pipe
+    Sha1Pipe,
+    CryptComponent,
+    UrlencodeComponent,
+    WindowSizeComponent,
+    UserAgentComponent
   ],
   imports: [
     BrowserModule,
