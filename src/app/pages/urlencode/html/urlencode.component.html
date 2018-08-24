@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button routerLink="/">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span>Tools - URL Encode/Decode</span>
+</mat-toolbar>
+
+<mat-card class="card-66">
+  <mat-form-field>
+    <mat-select placeholder="Opción" [(value)]="encodeOption">
+      <mat-option value="UrlEncode">UrlEncode</mat-option>
+      <mat-option value="UrlDecode">UrlDecode</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>Introduce un texto</p>
+  <mat-form-field class="full-width">
+    <textarea matInput placeholder="Texto" [(ngModel)]="encodeText" (input)="changeText()"></textarea>
+  </mat-form-field>
+  <p>Resultado {{ encodeOption }}</p>
+  <p>{{ encodeResult }}</p>
+</mat-card>

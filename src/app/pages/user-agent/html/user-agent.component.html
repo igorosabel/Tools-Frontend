@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button routerLink="/">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span>Tools - User Agent</span>
+</mat-toolbar>
+
+<mat-card class="card-66">
+  <strong>{{ ua }}</strong>
+  <button mat-icon-button class="info-button" (click)="uaInfo()">
+    <mat-icon aria-label="Detalle del User Agent">info_outline</mat-icon>
+  </button>
+</mat-card>
+
+<mat-card class="card-66">
+  <mat-list>
+    <mat-list-item *ngFor="let item of list">
+      <p class="item-info">
+        <span class="list-device">{{item.device | urldecode}}</span>
+        <span class="list-date">{{item.date | urldecode}}</span>
+        <span class="list-ua">
+          {{ item.useragent |urldecode }}
+        </span>
+      </p>
+      <button mat-icon-button>
+        <mat-icon aria-label="Editar">mode_edit</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon aria-label="Borrar">delete_forever</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon aria-label="Detalle del User Agent">info_outline</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

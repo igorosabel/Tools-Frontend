@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routes';
 import {
 	MatToolbarModule,
@@ -14,31 +15,40 @@ import {
 	MatCheckboxModule,
   MatRadioModule,
 	MatDialogModule,
-	MatInputModule
+	MatInputModule,
+	MatTabsModule,
+	MatSelectModule
 } from '@angular/material';
 
-import { AppComponent } from './app.component';
-import { MainComponent } from './components/main/main.component';
-import { Sha1Component } from './components/sha1/sha1.component';
-import { CryptComponent } from './components/crypt/crypt.component';
-import { UrlencodeComponent } from './components/urlencode/urlencode.component';
-import { WindowSizeComponent } from './components/window-size/window-size.component';
-import { UserAgentComponent } from './components/user-agent/user-agent.component';
-import { Sha1Pipe } from './pipes/sha1.pipe';
+import { AppComponent }        from './app.component';
+import { MainComponent }       from './pages/main/main.component';
+import { Sha1Component }       from './pages/sha1/sha1.component';
+import { CryptComponent }      from './pages/crypt/crypt.component';
+import { UrlencodeComponent }  from './pages/urlencode/urlencode.component';
+import { WindowSizeComponent } from './pages/window-size/window-size.component';
+import { UserAgentComponent }  from './pages/user-agent/user-agent.component';
+
+import { Sha1Pipe }      from './pipes/sha1.pipe';
+import { UrldecodePipe } from './pipes/urldecode.pipe';
+
+import { UrlToolsService } from './services/url-tools.service';
+import { ApiService }      from './services/api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     Sha1Component,
-    Sha1Pipe,
     CryptComponent,
     UrlencodeComponent,
     WindowSizeComponent,
-    UserAgentComponent
+    UserAgentComponent,
+    Sha1Pipe,
+    UrldecodePipe
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
@@ -52,9 +62,15 @@ import { Sha1Pipe } from './pipes/sha1.pipe';
     MatCheckboxModule,
     MatRadioModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule,
+    MatSelectModule
   ],
-  providers: [appRoutingProviders],
+  providers: [
+    appRoutingProviders,
+    UrlToolsService,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

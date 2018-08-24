@@ -1,0 +1,44 @@
+.info-button{
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+
+mat-list-item{
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  height: auto !important;
+}
+
+.item-info{
+  display: inline-block;
+  width: 90%;
+  margin: 0;
+}
+
+.list-device{
+  display: inline-block;
+  font-size: 20px;
+  color: #000;
+  padding-top: 10px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 1.6em;
+}
+
+.list-date{
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.list-ua{
+  color: #000 !important;
+  padding-bottom: 10px;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  margin: 0;
+  line-height: 1.6em;
+}
