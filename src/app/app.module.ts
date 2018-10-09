@@ -28,6 +28,8 @@ import { UrlencodeComponent }  from './pages/urlencode/urlencode.component';
 import { WindowSizeComponent } from './pages/window-size/window-size.component';
 import { UserAgentComponent }  from './pages/user-agent/user-agent.component';
 
+import { UaInfoDialog }  from './components/ua-info-dialog/ua-info-dialog.component';
+
 import { Sha1Pipe }      from './pipes/sha1.pipe';
 import { UrldecodePipe } from './pipes/urldecode.pipe';
 
@@ -43,6 +45,7 @@ import { ApiService }      from './services/api.service';
     UrlencodeComponent,
     WindowSizeComponent,
     UserAgentComponent,
+    UaInfoDialog,
     Sha1Pipe,
     UrldecodePipe
   ],

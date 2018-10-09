@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ApiService } from '../../services/api.service';
 import { UserAgentResult, UserAgent } from '../../interfaces/interfaces';
+import { UaInfoDialog } from '../../components/ua-info-dialog/ua-info-dialog.component';
 
 function _navigator() : any {
    return navigator;
@@ -37,20 +38,4 @@ export class UserAgentComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-}
-
-@Component({
-  selector: 'ua-info-dialog',
-  templateUrl: './html/ua-info-dialog.html',
-})
-export class UaInfoDialog {
-
-  constructor(
-    public uaInfoRef: MatDialogRef<UaInfoDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-  onNoClick(): void {
-    this.uaInfoRef.close();
-  }
-
 }
