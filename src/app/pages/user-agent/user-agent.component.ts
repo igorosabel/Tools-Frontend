@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from '../../services/api.service';
 import { UserAgentResult, UserAgent } from '../../interfaces/interfaces';
 import { UaInfoDialog } from '../../components/ua-info-dialog/ua-info-dialog.component';
