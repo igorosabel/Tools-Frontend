@@ -1,13 +1,11 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import * as sha1 from 'js-sha1';
+import { Pipe, PipeTransform } from "@angular/core";
+import { SHA1 } from "src/app/shared/sha1.class";
 
 @Pipe({
-  name: 'sha1'
+  name: "sha1",
 })
 export class Sha1Pipe implements PipeTransform {
-
-  transform(str: string): any {
-    return sha1(str);
+  transform(str: string): string {
+    return SHA1(str);
   }
-
 }

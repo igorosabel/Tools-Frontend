@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-crypt',
-  templateUrl: './html/crypt.component.html',
-  styleUrls: ['./css/crypt.component.css']
+  selector: "app-crypt",
+  templateUrl: "./crypt.component.html",
+  styleUrls: ["./crypt.component.scss"],
 })
 export class CryptComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
+  ngOnInit(): void {
     /*window.crypto.subtle.generateKey(
       {
         name: "AES-CBC",

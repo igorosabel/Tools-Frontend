@@ -1,41 +1,44 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ApiService } from '../../services/api.service';
-import { UserAgentResult, UserAgent } from '../../interfaces/interfaces';
-import { UaInfoDialog } from '../../components/ua-info-dialog/ua-info-dialog.component';
+import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+import { UaInfoDialog } from "src/app/components/ua-info-dialog/ua-info-dialog.component";
+import { UserAgent } from "src/app/model/user-agent.model";
+import { ApiService } from "src/app/services/api.service";
+import { ClassMapperService } from "src/app/services/class-mapper.service";
 
-function _navigator() : any {
-   return navigator;
+function _navigator(): any {
+  return navigator;
 }
 
 @Component({
-  selector: 'app-user-agent',
-  templateUrl: './html/user-agent.component.html',
-  styleUrls: ['./css/user-agent.component.css']
+  selector: "app-user-agent",
+  templateUrl: "./user-agent.component.html",
+  styleUrls: ["./user-agent.component.scss"],
 })
 export class UserAgentComponent implements OnInit {
-  ua: string = '';
+  ua: string = "";
   list: UserAgent[] = [];
 
-  constructor(private as: ApiService, public dialog: MatDialog) { }
+  constructor(
+    private as: ApiService,
+    private cms: ClassMapperService,
+    public dialog: MatDialog
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     const nav = _navigator();
     this.ua = nav.userAgent;
-    
-    this.as.getUserAgents().subscribe(result => {
-      this.list = result.list;
+
+    this.as.getUserAgents().subscribe((result) => {
+      this.list = this.cms.getUserAgents(result.list);
     });
   }
-  
-  uaInfo() {
+
+  uaInfo(): void {
     let uaInfoRef = this.dialog.open(UaInfoDialog, {
-      width: '250px',
-      data: { ua: this.ua }
+      width: "250px",
+      data: { ua: this.ua },
     });
 
-    uaInfoRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    uaInfoRef.afterClosed().subscribe((result) => {});
   }
 }

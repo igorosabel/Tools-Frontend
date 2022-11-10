@@ -1,28 +1,28 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from "@angular/core";
 
-function _window() : any {
-   return window;
+function _window(): any {
+  return window;
 }
 
 @Component({
-  selector: 'app-window-size',
-  templateUrl: './html/window-size.component.html',
-  styleUrls: ['./css/window-size.component.css']
+  selector: "app-window-size",
+  templateUrl: "./window-size.component.html",
+  styleUrls: ["./window-size.component.scss"],
 })
 export class WindowSizeComponent implements OnInit {
   sizeX: number = null;
   sizeY: number = null;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     const win = _window();
     this.sizeX = win.innerWidth;
     this.sizeY = win.innerHeight;
   }
-  
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event): void {
     this.sizeX = event.target.innerWidth;
     this.sizeY = event.target.innerHeight;
   }
