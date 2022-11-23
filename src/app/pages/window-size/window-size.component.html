@@ -1,10 +1,13 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button routerLink="/">
+  <button mat-icon-button
+          routerLink="/">
     <mat-icon>arrow_back</mat-icon>
   </button>
   <span>Tools - Tamaño ventana</span>
 </mat-toolbar>
 
 <mat-card class="card-66">
-  <h2 class="center">{{ sizeX }} x {{ sizeY }}</h2>
+  <mat-card-content>
+    <h2 class="center">{{ sizeX }} x {{ sizeY }}</h2>
+  </mat-card-content>
 </mat-card>

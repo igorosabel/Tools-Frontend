@@ -3,9 +3,12 @@
 </mat-toolbar>
 
 <mat-card class="card-66">
-  <mat-nav-list>
-    <mat-list-item *ngFor="let tool of toolList" [routerLink]="[tool.url]">
-      <a>{{ tool.name }}</a>
-    </mat-list-item>
-  </mat-nav-list>
+  <mat-card-content>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let tool of toolList"
+                     [routerLink]="[tool.url]">
+        <a>{{ tool.name }}</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card-content>
 </mat-card>
